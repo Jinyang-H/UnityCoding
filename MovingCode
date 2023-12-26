@@ -1,5 +1,7 @@
 void Move()
 {
+  public float speed = 5;
+
   float x = Input.GetAxisRaw("Horizontal");
   float y = Input.GetAxisRaw("Vertical");
   Vector3 dir = new Vector3(x, y, 0).normalized;
