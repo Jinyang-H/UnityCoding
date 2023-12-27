@@ -1,23 +1,23 @@
-//// 배경 스크롤
-//public class BGScript : MonoBehaviour
-//{
+// 배경 스크롤
+public class BGScript : MonoBehaviour
+{
 
-//    public float speed = 1.5f;
-//    SpriteRenderer spr;
+    public float speed = 1.5f;
+    SpriteRenderer spr;
 
-//    void Start()
-//    {
-//        spr = GetComponent<SpriteRenderer>();
-//    }
-//    void Update()
-//    {
-//        transform.position += Vector3.left * Time.deltaTime * speed;
-//        Vector3 pos = transform.position;
-//        if (pos.x + spr.bounds.size.x / 2 < -8) // 여기서 8은 세로 반값 크기이다. 
-//        {
-//            float size = spr.bounds.size.x * 2;
-//            pos.x += size;
-//            transform.position = pos;
-//        }
-//    }
-//}
+    void Start()
+    {
+        spr = GetComponent<SpriteRenderer>();
+    }
+    void Update()
+    {
+        transform.position += Vector3.left * Time.deltaTime * speed;
+        Vector3 pos = transform.position;
+        if (pos.x + spr.bounds.size.x / 2 < -8) // 여기서 8은 세로 반값 크기이다. 
+        {
+            float size = spr.bounds.size.x * 2;
+            pos.x += size;
+            transform.position = pos;
+        }
+    }
+}
