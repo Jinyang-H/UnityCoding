@@ -1,10 +1,18 @@
-void Move()
+// Player Moving
+public class PlayerScript : MonoBehaviour
 {
-  public float speed = 5;
+    public float speed = 5;
 
-  float x = Input.GetAxisRaw("Horizontal");
-  float y = Input.GetAxisRaw("Vertical");
-  Vector3 dir = new Vector3(x, y, 0).normalized; // normalized => 대각선도 같은 크기로 움직이게 해준다.
-  transform.position = transform.position + dir * Time.deltaTime * speed;
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+            float x = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical");
+            Vector3 dir = new Vector3(x, y, 0).normalized; // normalized => 대각선도 같은 크기로 움직이게 해준다.
+            transform.position = transform.position + dir * Time.deltaTime * speed;
+    }
 }
-
