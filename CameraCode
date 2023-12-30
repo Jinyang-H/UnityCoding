@@ -1,2 +1,0 @@
-// 뷰포트 좌표계에서 월드 좌표계 전환
-Vector3 worldPos = Camera.main.ViewPortToWorldPoint(new Vector3(1, 1, 0));
