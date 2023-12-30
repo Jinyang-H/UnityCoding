@@ -19,8 +19,8 @@ public class PlayerScript : MonoBehaviour
 public class PlayerScript : MonoBehaviour
 {
     Vector3 min, max;
-    Vector3 colSize;
-    Vector3 chrSize;
+    Vector2 colSize;
+    Vector2 chrSize;
 
     void Start()
     {
