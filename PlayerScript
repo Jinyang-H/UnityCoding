@@ -1,4 +1,4 @@
-// Player Moving
+// Player Moving ***********************************************************************************************************
 public class PlayerScript : MonoBehaviour
 {
     public float speed = 5;
@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     }
 }
 
-// 캐릭터 위치 제한 걸기
+// 캐릭터 위치 제한 걸기 ****************************************************************************************************
 public class PlayerScript : MonoBehaviour
 {
     Vector3 min, max;
@@ -50,5 +50,35 @@ public class PlayerScript : MonoBehaviour
         transform.position = new Vector3(newX, newY, transform.position.z);
     }
 }
+
+// mathf.Clamp로 캐릭터 위치 제한 걸기 (위와 같은 기능, 대체 가능)**************************************************************
+public class PlayerScript : MonoBehaviour
+{
+    Vector3 min, max;
+    Vector2 colSize;
+    Vector2 chrSize;
+
+    void Start()
+    {
+        min = new Vector3(-8, -4.5f, 0);
+        max = new Vector3(8, 4.5f, 0);
+        colSize = GetComponent<BoxCollider2D>().size;
+        chrSize = new Vector2(colSize.x/2, colSize.y/2);
+    }
+
+    void Update()
+    {
+            float newX = transform.position.x;
+            float newY = transform.position.y;
+
+        newX = Mathf.Clamp(newX, min.x + chrSize.x, max.x - chrSize.x-0.1f); // 0.1f는 튀어나온 캐릭터를 들어가게 하기 위해 조정한 것이다. 
+        newY = Mathf.Clamp(newY, min.y + chrSize.y, max.y - chrSize.y);
+
+        transform.position = new Vector3(newX, newY, transform.position.z);
+    }
+}
+
+
+
 
 
