@@ -35,19 +35,19 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
             float newX = transform.position.x;
-            float newX = transform.position.y;
+            float newY = transform.position.y;
 
-            if(newX < min.x + chrSize.x)
+             if (newX < min.x + chrSize.x) 
                 newX = min.x + chrSize.x;
             if (newX > max.x - chrSize.x)
                 newX = max.x - chrSize.x;
-
+        
             if (newY < min.y + chrSize.y)
                 newY = min.y + chrSize.y;
             if (newY > max.y - chrSize.y)
                 newY = max.y - chrSize.y;
 
-        transfrom.position = new Vector3(newX, newY, transform.potision.z);
+        transform.position = new Vector3(newX, newY, transform.position.z);
     }
 }
 
