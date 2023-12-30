@@ -1,11 +1,10 @@
 // Player Moving
 public class PlayerScript : MonoBehaviour
 {
-    public float speed = 5;
 
     void Start()
     {
-        
+        public float speed = 5;
     }
 
     void Update()
